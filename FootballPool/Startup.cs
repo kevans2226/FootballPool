@@ -16,8 +16,8 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
-using TestWebApi.Data;
-
+using FootballPool.Data;
+using FootballPool.Data.Db;
 namespace FootballPool
 {
     public class Startup
@@ -71,8 +71,11 @@ namespace FootballPool
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, WebDbContext webDbContext, IServiceProvider serviceProvider)
         {
+            webDbContext.Database.EnsureCreated();
+            SeedDb.Initialize(serviceProvider); 
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -91,6 +94,7 @@ namespace FootballPool
             {
                 endpoints.MapControllers();
             });
+
         }
     }
 }
