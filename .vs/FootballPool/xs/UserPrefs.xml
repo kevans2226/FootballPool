@@ -1,0 +1,30 @@
+﻿<Properties StartupConfiguration="{ECF838C4-A33F-42EC-881B-4B77E8F56DE2}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="FootballPool/Controllers/AuthenticateController.cs">
+    <Files>
+      <File FileName="FootballPool/FootballPool.csproj" Line="18" Column="3" />
+      <File FileName="FootballPool/Startup.cs" Line="21" Column="23" />
+      <File FileName="FootballPool/Program.cs" Line="10" Column="23" />
+      <File FileName="FootballPool/Controllers/AuthenticateController.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="FootballPool" expanded="True">
+            <Node name="FootballPool" expanded="True">
+              <Node name="Controllers" expanded="True">
+                <Node name="AuthenticateController.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.FootballPool PreferredExecutionTarget="/Applications/Safari.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
