@@ -18,6 +18,8 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using FootballPool.Data;
 using FootballPool.Data.Db;
+using Microsoft.AspNetCore.SpaServices.AngularCli; 
+
 namespace FootballPool
 {
     public class Startup
