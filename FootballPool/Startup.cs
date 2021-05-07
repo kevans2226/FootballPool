@@ -16,8 +16,8 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
-using TestWebApi.Data;
-
+using FootballPool.Data;
+using FootballPool.Data.Db;
 namespace FootballPool
 {
     public class Startup
@@ -71,8 +71,11 @@ namespace FootballPool
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, WebDbContext webDbContext, IServiceProvider serviceProvider)
         {
+            webDbContext.Database.EnsureCreated();
+            SeedDb.Initialize(serviceProvider); 
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -90,6 +93,19 @@ namespace FootballPool
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+            });
+
+            app.UseSpa(spa =>
+            {
+                // To learn more about options for serving an Angular SPA from ASP.NET Core,
+                // see https://go.microsoft.com/fwlink/?linkid=864501
+
+                spa.Options.SourcePath = "ClientApp";
+
+                if (env.IsDevelopment())
+                {
+                    spa.UseAngularCliServer(npmScript: "start");
+                }
             });
         }
     }
