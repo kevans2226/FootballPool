@@ -1,0 +1,17 @@
+<form [formGroup]="loginForm">
+    <table>
+        <tr>
+            <td>User Name</td>
+            <td><input type="username" name="username" formControlName="userName"  /></td>
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td><input type="password" name="password" formControlName="password" /></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <button  [disabled]="loginForm.invalid" (click)="login()">Login</button>
+            </td>
+        </tr>
+    </table>
+</form>

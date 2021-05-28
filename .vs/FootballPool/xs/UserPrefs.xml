@@ -11,7 +11,8 @@
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="FootballPool" expanded="True">
-            <Node name="FootballPool" expanded="True" selected="True">
+            <Node name="FootballPool" expanded="True">
+              <Node name="ClientApp" selected="True" />
               <Node name="Controllers" expanded="True" />
               <Node name="Data" expanded="True">
                 <Node name="View" expanded="True" />
