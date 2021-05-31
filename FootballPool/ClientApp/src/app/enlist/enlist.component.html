@@ -1,0 +1,177 @@
+<form [formGroup]="enlistForm">
+    
+    <div class="formControl">
+        <mat-form-field>
+            <mat-label>Pool Name</mat-label>
+            <input type="text" name="userName" formControlName="userName" matInput>
+        </mat-form-field>
+    </div>
+
+    <div class="formControl">
+        <mat-form-field>
+            <mat-label>First Name</mat-label>
+            <input type="text" name="firstName" formControlName="firstName" matInput>
+        </mat-form-field>
+    </div>
+
+    <div class="formControl">
+        <mat-form-field>
+            <mat-label>Last Name</mat-label>
+            <input type="text" name="lastName" formControlName="lastName" matInput>
+        </mat-form-field>
+    </div>  
+    
+    <div class="formControl">
+        <mat-form-field>
+            <mat-label>Address</mat-label>
+            <input type="text" name="address" formControlName="address" matInput>
+        </mat-form-field>
+    </div>
+
+    <div class="formControl">
+        <mat-form-field>
+            <mat-label>City</mat-label>
+            <input type="text" name="city" formControlName="city" matInput>
+        </mat-form-field>
+    </div>
+
+    <div class="formControl">
+        <mat-form-field>
+            <mat-label>State</mat-label>
+            <input type="text" name="state" matInput formControlName="state">
+        </mat-form-field>
+    </div>
+
+    <div class="formControl">
+        <mat-form-field>
+            <mat-label>State</mat-label>
+            <mat-select formControlName="state">
+                <mat-option *ngFor="let s of states" [value]="s.abbreviation">{{s.name}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+    <div class="formControl">
+        <mat-form-field>
+            <mat-label>Zip Code</mat-label>
+            <input type="text" name="zipCode" formControlName="zipCode" matInput>
+        </mat-form-field>
+    </div>
+
+    <div class="formControl">
+        <mat-form-field>
+            <mat-label>Cell Phone</mat-label>
+            <input type="text" name="cellPhone" formControlName="cellPhone" matInput>
+        </mat-form-field>
+    </div>
+
+    <div class="formControl">
+        <mat-form-field>
+            <mat-label>Email Address</mat-label>
+            <input type="email" name="email" formControlName="emailAddress" matInput>
+        </mat-form-field>
+    </div>
+
+    <div class="formControl">
+        <mat-form-field>
+            <mat-label>Martial Status</mat-label>
+            <mat-select formControlName="martialStatus">
+                <mat-option value="M">Married</mat-option>
+                <mat-option value="S">Single</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+    <div class="formControl">
+        <mat-form-field>
+            <mat-label>Number of Kids</mat-label>
+            <input type="number" name="numberOfKids" formControlName="numberOfKids" matInput>
+        </mat-form-field>
+    </div>
+
+    <div class="formControl">
+        <mat-form-field>
+            <mat-label>Other Family</mat-label>
+            <input type="text" name="otherFamily" formControlName="otherFamily" matInput>
+        </mat-form-field>
+    </div>
+
+    <div class="formControl">
+        <mat-form-field>
+            <mat-label>Occupation</mat-label>
+            <input type="text" name="occupation" formControlName="occupation" matInput>
+        </mat-form-field>
+    </div>
+
+    <div class="formControlName">
+        <mat-form-field>
+            <mat-label>Age</mat-label>
+            <input type="number" name="number" formControlName="age" matInput>
+        </mat-form-field>
+    </div>
+
+    <div class="formControlName">
+        <mat-form-field>
+            <mat-label>Favorite Team</mat-label>
+            <mat-select formControlName="favoriteTeam">
+                <mat-option *ngFor="let t of teams" [value]="t.teamId">{{t.mascot}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+    <div class="formControlName">
+        <mat-form-field>
+            <mat-label>Birth Place</mat-label>
+            <input matInput formControlName="birthPlace" type="text">
+        </mat-form-field>
+    </div>
+
+    <div class="formControlName">
+        <mat-form-field>
+            <mat-label>High School</mat-label>
+            <input matInput formControlName="highSchool" type="text">
+        </mat-form-field>
+    </div>
+
+    <div class="formControlName">
+        <mat-form-field>
+            <mat-label>College</mat-label>
+            <input matInput formControlName="college" type="text">
+        </mat-form-field>
+    </div>
+
+    <div class="formControlName">
+        <mat-form-field>
+            <mat-label>Brush With Greatness</mat-label>
+            <input matInput formControlName="brushWithGreatness" type="text">
+        </mat-form-field>
+    </div>
+
+    <div class="formControlName">
+        <mat-form-field>
+            <mat-label>Interesting Tidbits</mat-label>
+            <input matInput formControlName="interestingTidbits" type="text">
+        </mat-form-field>
+    </div>
+
+    <div class="formControlName">
+        <mat-form-field>
+            <mat-label>Twitter</mat-label>
+            <input matInput formControlName="twitter" type="text">
+        </mat-form-field>
+    </div>
+
+    <div class="formControlName">
+        <mat-form-field>
+            <mat-label>Instagram</mat-label>
+            <input matInput formControlName="instagram" type="text">
+        </mat-form-field>
+    </div>
+
+    <div class="formControlName">
+        <mat-form-field>
+            <mat-label>Comments</mat-label>
+            <input matInput formControlName="comments" type="text">
+        </mat-form-field>
+    </div>
+</form>

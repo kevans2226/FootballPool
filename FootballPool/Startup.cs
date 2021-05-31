@@ -18,7 +18,9 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using FootballPool.Data;
 using FootballPool.Data.Db;
-using Microsoft.AspNetCore.SpaServices.AngularCli; 
+using Microsoft.AspNetCore.SpaServices.AngularCli;
+using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Storage;
 
 namespace FootballPool
 {
@@ -41,6 +43,10 @@ namespace FootballPool
             {
                 option.UseSqlite(Configuration.GetConnectionString("DatabaseConnection"));
             });
+            services.AddDbContext<FootballPoolDbContext>(option => { 
+                option.UseSqlite(Configuration.GetConnectionString("DatabaseConnection")); 
+            });
+
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<WebDbContext>()
                 .AddDefaultTokenProviders();
@@ -73,10 +79,15 @@ namespace FootballPool
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, WebDbContext webDbContext, IServiceProvider serviceProvider)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, WebDbContext webDbContext, IServiceProvider serviceProvider, FootballPoolDbContext fbdbContext)
         {
             webDbContext.Database.EnsureCreated();
+            //fbdbContext.Database.GenerateCreateScript();
+            //var databaseCreater = fbdbContext.GetService<IRelationalDatabaseCreator>();
+            //fbdbContext.Database.EnsureCreated();
+
             SeedDb.Initialize(serviceProvider); 
+            SeedDb.SeedTeams(serviceProvider); 
 
             if (env.IsDevelopment())
             {
@@ -84,7 +95,7 @@ namespace FootballPool
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "TestWebApi v1"));
             }
-            SeedDb.Initialize(app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope().ServiceProvider);
+            
             app.UseHttpsRedirection();
 
             app.UseRouting();

@@ -13,5 +13,13 @@ namespace FootballPool.Data
         public WebDbContext(DbContextOptions<WebDbContext> options) : base (options) 
         {
         }
+
+        public DbSet<User> Members {get;set;}
+        public DbSet<Team> Teams {get;set;}
+    }
+
+    public class FootballPoolDbContext : DbContext { 
+        public FootballPoolDbContext(DbContextOptions<FootballPoolDbContext> options) : base(options) {}
+
     }
 }
