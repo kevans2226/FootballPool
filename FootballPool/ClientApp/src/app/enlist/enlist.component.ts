@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ExternalData } from '../external-data';
 import { FootballService } from '../football.service';
-import { SimpleTeam } from '../structure';
+import { SimpleTeam, UserInput } from '../structure';
 
 @Component({
   selector: 'app-enlist',
@@ -48,4 +48,31 @@ export class EnlistComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  submit(): void { 
+    var input = {
+      userName: this.enlistForm.get("userName")?.value,
+      userEmail: this.enlistForm.get("emailAddress")?.value,
+      firstName: this.enlistForm.get("firstName")?.value,
+      lastName: this.enlistForm.get("lastName")?.value,
+      address: this.enlistForm.get("address")?.value,
+      city: this.enlistForm.get("city")?.value,
+      state: this.enlistForm.get("state")?.value,
+      zipCode: this.enlistForm.get("zipCode")?.value,
+      cellPhone: this.enlistForm.get("cellPhone")?.value,
+      martialStatus: this.enlistForm.get("martialStatus")?.value,
+      kids: this.enlistForm.get("numberOfKids")?.value,
+      otherFamilyInfo: this.enlistForm.get("otherFamily")?.value,
+      age: this.enlistForm.get("age")?.value,
+      favoriteNFLTeamId: this.enlistForm.get("favoriteTeam")?.value,
+      comments: this.enlistForm.get("comments")?.value,
+      birthPlace: this.enlistForm.get("birthPlace")?.value,
+      highSchool: this.enlistForm.get("highSchool")?.value,
+      brushWithGreatness: this.enlistForm.get("brushWithGreatness")?.value,
+      interestingTidbits: this.enlistForm.get("interestingTidbits")?.value,
+      twitter: this.enlistForm.get("twitter")?.value,
+      instagram: this.enlistForm.get("instagram")?.value
+    } as unknown as UserInput; 
+
+    console.log(input); 
+  }
 }

@@ -35,7 +35,7 @@ namespace FootballPool.Data {
         public string Occupation{get;set;}
         public int Age{get;set;}
         [MaxLength(30)]
-        public string FavoriteNFLTeam {get; set; }
+        public int FavoriteNFLTeamId {get; set; }
         [MaxLength(200)]
         public string FavoriteWebSite{get;set;}
         [MaxLength(300)]

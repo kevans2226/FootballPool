@@ -13,7 +13,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatOptionModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
 import { FootballService } from './football.service';
-
+import { MatButtonModule } from '@angular/material/button'; 
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +29,8 @@ import { FootballService } from './football.service';
     MatFormFieldModule,
     MatInputModule,
     MatOptionModule,
-    MatSelectModule
+    MatSelectModule,
+    MatButtonModule
   ],
   providers: [FootballService],
   bootstrap: [AppComponent]

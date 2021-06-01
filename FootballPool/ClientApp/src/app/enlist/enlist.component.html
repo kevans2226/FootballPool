@@ -35,12 +35,6 @@
         </mat-form-field>
     </div>
 
-    <div class="formControl">
-        <mat-form-field>
-            <mat-label>State</mat-label>
-            <input type="text" name="state" matInput formControlName="state">
-        </mat-form-field>
-    </div>
 
     <div class="formControl">
         <mat-form-field>
@@ -174,4 +168,6 @@
             <input matInput formControlName="comments" type="text">
         </mat-form-field>
     </div>
+
+    <button mat-raised-button (click)="submit()">Submit</button>
 </form>
